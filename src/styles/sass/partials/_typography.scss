@@ -1,0 +1,53 @@
+
+$baseFont: 'Roboto', sans-serif;
+$black: #17202a;
+$white: #ffffff;
+$offWhtite: #fbfcfd;
+$lightGray: #e5e5e5;
+$darkGray: #ababab;
+
+
+
+html {
+     font-size: 125%;
+     font-family: $baseFont;
+}
+
+
+// <FontAwesomeIcon icon="fa-thin fa-cart-shopping" />
+// <FontAwesomeIcon icon="fa-thin fa-user" />
+// <FontAwesomeIcon icon="fa-thin fa-user-group" />
+// <FontAwesomeIcon icon="fa-thin fa-comment-dots" />
+// <FontAwesomeIcon icon="fa-thin fa-camera" />
+// <FontAwesomeIcon icon="fa-thin fa-house" />
+// <FontAwesomeIcon icon="fa-thin fa-image" />
+// <FontAwesomeIcon icon="fa-thin fa-heart" />
+// <FontAwesomeIcon icon="fa-thin fa-credit-card-blank" />
+// <FontAwesomeIcon icon="fa-thin fa-magnifying-glass" />
+// <FontAwesomeIcon icon="fa-thin fa-phone" />
+// <FontAwesomeIcon icon="fa-thin fa-briefcase-blank" />
+// <FontAwesomeIcon icon="fa-thin fa-angle-left" />
+// <FontAwesomeIcon icon="fa-thin fa-file-plus" />
+// <FontAwesomeIcon icon="fa-thin fa-trash-can" />
+// <FontAwesomeIcon icon="fa-thin fa-sliders" />
+// <FontAwesomeIcon icon="fa-thin fa-check" />
+// <FontAwesomeIcon icon="fa-thin fa-user-plus" />
+// <FontAwesomeIcon icon="fa-thin fa-location-dot" />
+// <FontAwesomeIcon icon="fa-thin fa-arrow-up-to-line" />
+// <FontAwesomeIcon icon="fa-thin fa-plus" />
+
+h1 {
+     padding: 10px 20px;
+}
+
+p {
+     padding: 4rem 2rem;
+}
+
+.button {
+     background-color: $black;
+     color: $white;
+     margin: 20px;
+     border: none;
+     padding: 1em 2em;
+}
