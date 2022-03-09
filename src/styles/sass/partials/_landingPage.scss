@@ -1,0 +1,26 @@
+
+h1 {
+    padding: 10px 20px;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.introParagraph {
+    padding: 2rem 2rem;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; 
+        p {
+            letter-spacing: 1.5px;
+        }
+}
+
+.button {
+    background-color: $black;
+    color: $white;
+    margin: 20px;
+    border: none;
+    padding: 1em 2em;
+}

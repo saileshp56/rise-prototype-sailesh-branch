@@ -13,7 +13,13 @@ html {
      font-family: $baseFont;
 }
 
-
+// Our general container for all content. This will apply to each major section.
+.wrapper {
+     max-width: 1200px;
+     width: 90%;
+     margin: 0 auto;
+}
+// Here is a list of each of the icons we will need.
 // <FontAwesomeIcon icon="fa-thin fa-cart-shopping" />
 // <FontAwesomeIcon icon="fa-thin fa-user" />
 // <FontAwesomeIcon icon="fa-thin fa-user-group" />
@@ -35,19 +41,3 @@ html {
 // <FontAwesomeIcon icon="fa-thin fa-location-dot" />
 // <FontAwesomeIcon icon="fa-thin fa-arrow-up-to-line" />
 // <FontAwesomeIcon icon="fa-thin fa-plus" />
-
-h1 {
-     padding: 10px 20px;
-}
-
-p {
-     padding: 4rem 2rem;
-}
-
-.button {
-     background-color: $black;
-     color: $white;
-     margin: 20px;
-     border: none;
-     padding: 1em 2em;
-}
