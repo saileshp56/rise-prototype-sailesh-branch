@@ -3,11 +3,17 @@ import './App.css';
 import riseLogo from './styles/assets/spLogo.png';
 import { useState } from 'react';
 import { Link, Routes, Route, Outlet, useParams } from 'react-router-dom';
-import UserInputs from './components/UserInputs.js';
 
+const UserInputs = () => {
+  return (
+    <div>
+      <h2>Welcome!!</h2>
+      <Outlet />
+    </div>
+  )
+};
 
 function App() {
-  const [submit, setSubmit] = useState(false);
   
   return (
       <div className="App">
@@ -23,7 +29,7 @@ function App() {
             </div>
           <Link to="/UserInputs" className='linkToUserInputPage'>REGISTER YOUR ACCOUNT</Link>
           <Routes>
-            <Route path="/UserInputs"/>
+            <Route path='/UserInputs' element={<UserInputs />} />
           </Routes>
         </div>
       </div>

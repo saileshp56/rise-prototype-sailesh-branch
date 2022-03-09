@@ -3,8 +3,8 @@
 // import { useNavigate } from "react-router-dom";
 // import { Routes, Route } from 'react-router-dom';
 
-// const UserInputs = ({ propTerm, propLimit, propSubmit }) => {
-    
+// const UserInputs = () => {
+
 
 // return (
 //     <div>
