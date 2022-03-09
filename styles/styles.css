@@ -3,20 +3,10 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
-  padding: 10px 20px;
-}
-
-p {
-  padding: 4rem 2rem;
-}
-
-.button {
-  background-color: #17202a;
-  color: #ffffff;
-  margin: 20px;
-  border: none;
-  padding: 1em 2em;
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 html {
@@ -259,4 +249,40 @@ html {
 h1, h2, h3, h4, h5, h6, p, a, ul, li {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  padding: 10px 20px;
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.introParagraph {
+  padding: 2rem 2rem;
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+.introParagraph p {
+  letter-spacing: 1.5px;
+}
+
+.linkToUserInputPage {
+  background-color: #17202a;
+  color: #ffffff;
+  margin: 20px;
+  border: none;
+  padding: 1em 2em;
+}
+
+a:link {
+  text-decoration: none;
 }
