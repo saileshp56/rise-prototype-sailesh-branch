@@ -8,7 +8,7 @@
 
 // return (
 //     <div>
-//         <h2>HAAAAAAAY YOU GUYS</h2>
+//         <h2>Set up your Account</h2>
 //     </div>
 // )
 // }
