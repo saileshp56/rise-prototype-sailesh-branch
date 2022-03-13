@@ -1,3 +1,21 @@
+# React + Electron
+
+This project uses [Create React App](https://github.com/facebook/create-react-app) (introduced below) and [Electron](https://www.electronjs.org), copying a Git branch ([here](https://github.com/csepulv/electron-with-create-react-app/tree/npm-start)) of the approach described in the article [here](https://www.freecodecamp.org/news/building-an-electron-application-with-create-react-app-97945861647c#.ze6c9qin1).
+
+## Available Scripts
+
+### `npm start`
+
+Originally a React script, which is now renamed to `npm run react-start`.
+
+Runs the app in development mode and launches Electron. You can also view the app in your browser at [http://localhost:3000](http://localhost:3000).
+
+By the way, Electron has a developer tools console just like a browser would. There should be a menu option to open/close it, and you can set it to open on launch by uncommenting line 30 in `src/electron-starter.js`.
+
+### `npm run electron-start`
+
+If for any reason you choose to run `npm run react-start`, which is like `npm start` except without launching Electron, you can later launch Electron by running `npm run electron-start` (in a new terminal).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -6,7 +24,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### ~~`npm start`~~ `npm run react-start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
