@@ -1,0 +1,24 @@
+// The Styling for the User Input Page for setting up the Rise Account
+
+// The .userInputIntro name class for is styling the introductory information on this Account set up page.
+
+.userInputIntro h2 {
+    padding: 20px 0px;
+}
+
+.userInputIntro p {
+    padding: 20px 0px;
+}
+
+.submit{
+    margin: 20px 0px;
+}
+
+form {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: right;
+    margin: 5px auto;
+    padding: 0 5px;
+}
