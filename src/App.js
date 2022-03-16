@@ -1,6 +1,5 @@
 import './styles/sass/styles.scss';
 import './App.css';
-import riseLogo from './styles/assets/spLogo.png';
 import { useState } from 'react';
 import { Link, Routes, Route, Outlet, useParams } from 'react-router-dom';
 import UserInputs from './components/UserInputs.js';
