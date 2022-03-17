@@ -10,7 +10,7 @@ const SelfieCamera = React.forwardRef(({ width, height, onTryCameraAccess }, ref
   const [streaming, setStreaming] = useState(false);
 
   async function getVideo() {
-    navigator.mediaDevices.getUserMedia({video: { width, height }})
+    navigator.mediaDevices.getUserMedia({video: true})
       .then((stream) => {
         let video = ref.current;
         video.srcObject = stream;
@@ -30,7 +30,7 @@ const SelfieCamera = React.forwardRef(({ width, height, onTryCameraAccess }, ref
 
   return (
     <div>
-      <video ref={ref}/>
+      <video ref={ref} width={width} height={height}/>
       {
         !streaming &&
         <div width={width} height={height}>
