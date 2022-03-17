@@ -10,7 +10,7 @@ const SelfieCamera = React.forwardRef(({ width, height, onTryCameraAccess }, ref
   const [streaming, setStreaming] = useState(false);
 
   async function getVideo() {
-    navigator.mediaDevices.getUserMedia({video: true})
+    navigator.mediaDevices.getUserMedia({video: {facingMode: 'user'}})
       .then((stream) => {
         let video = ref.current;
         video.srcObject = stream;
