@@ -1,25 +1,36 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-// Note:
-// - The onTryCameraAccess prop is called after each attempt to access the user's
-//   camera. If the attempt is successful, true is passed as the only argument.
-//   If not, false is passed as the first argument, and the second argument is
-//   a DOMException with error name 'NotAllowedError' if the user denies permission
-//   or 'NotFoundError' if the camera is not available.
-const SelfieCamera = React.forwardRef(({ width, height, onTryCameraAccess }, ref) => {
+/**
+ * A <video/> element live streaming from the user's camera. The SelfieCamera's ref
+ * is forwarded to the <video/> element, enabling for example media track access:
+ * ref.current.srcObject?.getTracks()
+ * @prop {Integer} width - the video display width in pixels
+ * @prop {Integer} height - the video display height in pixels
+ * @prop {Boolean} withAudio - if true, collects both audio and video tracks
+ * @prop {Function} onTryMediaAccess - called after each attempt to access the user's
+ *   media. If the attempt is successful, true is passed as the only argument.
+ *   If not, false is passed as the first argument, and the second argument is
+ *   a DOMException with error name 'NotAllowedError' if the user denies permission
+ *   or 'NotFoundError' if the requested media are not available.
+ */
+const SelfieCamera = React.forwardRef(({ width, height, withAudio, onTryMediaAccess }, ref) => {
   const [streaming, setStreaming] = useState(false);
 
-  async function getVideo() {
-    navigator.mediaDevices.getUserMedia({video: {facingMode: 'user'}})
+  function getVideo() {
+    let constraints = {
+      video: { facingMode: 'user' },
+      audio: withAudio
+    };
+    navigator.mediaDevices.getUserMedia(constraints)
       .then((stream) => {
         let video = ref.current;
         video.srcObject = stream;
         video.play();
-        onTryCameraAccess(true);
+        onTryMediaAccess(true);
         setStreaming(true);
       })
       .catch((err) => {
-        onTryCameraAccess(false, err);
+        onTryMediaAccess(false, err);
         setStreaming(false);
       });
   }
@@ -34,7 +45,7 @@ const SelfieCamera = React.forwardRef(({ width, height, onTryCameraAccess }, ref
       {
         !streaming &&
         <div width={width} height={height}>
-          <p>Unable to access camera. Please check your permission settings.</p>
+          <p>Camera{withAudio && " or microphone"} unavailable. Please check your permission settings.</p>
           <button onClick={getVideo}>Retry</button>
         </div>
       }
