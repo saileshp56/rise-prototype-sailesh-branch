@@ -270,9 +270,16 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .introParagraph p {
   letter-spacing: 1.5px;
+  text-align: center;
+  padding: 5px 20px;
 }
 
 .linkToUserInputPage, .submitButton {
@@ -374,4 +381,5 @@ form {
 input, .dropDown, .message {
   border-radius: 5px;
   resize: none;
+  text-align: center;
 }
