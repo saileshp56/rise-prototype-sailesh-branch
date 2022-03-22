@@ -271,10 +271,10 @@ h1 {
           align-items: center;
   margin: 0 auto;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .introParagraph p {
   letter-spacing: 1.5px;

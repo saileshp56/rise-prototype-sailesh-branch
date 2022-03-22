@@ -15,7 +15,7 @@ const MarketPlaceInputs = () => {
                     // onChange={(e) => setUserChoice(e.target.value)}
                               // value={userChoice}
                               >
-                         <option vlaue="placeholder" disabled> Please select a category
+                         <option value="placeholder" disabled> Please select a category
                          </option>
                          <option value="vehicles">
                               Vehicles
