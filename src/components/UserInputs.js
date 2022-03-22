@@ -8,7 +8,22 @@ import riseLogo from '../styles/assets/spLogo.png';
 
 // Add Joseph's code for the image capture.
 
+
+
 const UserInputs = () => {
+
+     const navigate = useNavigate();
+
+     const handleSubmit = (event) => {
+          event.preventDefault();
+          // this will be where the backend verifies the user's info
+          //  all the input fields should have a ternary/boolean
+          console.log(`hello`);
+          navigate('/Dashboard',
+          
+     )
+
+     }
      
 return (
      <div className='wrapper'>
@@ -20,7 +35,7 @@ return (
                <div className="logo">
                     <img src={riseLogo}></img>
                </div>
-               <form className="formMaster">
+               <form className="formMaster" onSubmit={(event) => handleSubmit(event)}>
                     <div className="nameBox">
                          <label htmlFor="first name">First Name: </label>
                               <input type="text" name="firstName" required/>
@@ -73,7 +88,9 @@ return (
                     </div>
                </form>                    
           </div>
-          <input className="submitButton" type="submit" value="SUBMIT" />    
+          <input className="submitButton" type="submit" value="SUBMIT" 
+          // onChange={(e) => setUserChoice(e.target.value)} value={userChoice} 
+          />    
      </div>
 
      
