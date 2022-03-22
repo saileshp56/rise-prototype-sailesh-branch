@@ -22,25 +22,25 @@ return (
                </div>
                <form className="formMaster">
                     <div className="nameBox">
-                         <label htmlFor="first name">First Name:</label>
-                              <input type="text" name="firstName" />
+                         <label htmlFor="first name">First Name: </label>
+                              <input type="text" name="firstName" required/>
                     </div>
                     <div className="nameBox">
-                         <label htmlFor="last name">Last Name:</label>
-                         <input type="text" name="lastName" />
+                         <label htmlFor="last name">Last Name: </label>
+                         <input type="text" name="lastName" required/>
                     </div>
                     <div className="infoBox">
                          {/* Ideally this will be calandar input for users dob. */}
-                         <label htmlFor="age">Age:
+                         <label htmlFor="age">Age: 
                          </label>
-                         <input type="text" name="age"/>
+                         <input type="text" name="age" required/>
                     </div>
                     <div className="infoBox">
-                         <label htmlFor="height">Height:</label>
-                         <input type="text" name="height"/>
+                         <label htmlFor="height">Height (cm): </label>
+                         <input type="text" name="height" required/>
                     </div>
                     <div className="infoBox">
-                         <label htmlFor="sex">Sex:
+                         <label htmlFor="sex">Sex: 
                          </label>
                          <select className="dropDown"
                               id="sex"
@@ -55,21 +55,21 @@ return (
                          </select>
                     </div>
                     <div className="addBox">
-                         <label htmlFor="address">Address:
+                         <label htmlFor="address">Address: 
                          </label>
-                         <input type="text" name="address"/>     
+                         <input type="text" name="address" required/>     
                     </div>
                     <div className="occBox">
                          <label htmlFor="occupation">
-                              Occupation:</label>
-                         <input type="text" name="occupation"/>
+                              Occupation: </label>
+                         <input type="text" name="occupation" required/>
                          
                     </div>
                     <div className="bioBox">
                          <label htmlFor="bio">
-                              Bio:</label>
+                              Bio: </label>
                               <textarea id="message" className="message" placeholder="Your Message" name="message" cols="30"
-                         rows="10" required=""></textarea>
+                         rows="10" required ></textarea>
                     </div>
                </form>                    
           </div>
