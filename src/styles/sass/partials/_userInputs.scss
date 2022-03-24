@@ -22,3 +22,39 @@ form {
     margin: 5px auto;
     padding: 0 5px;
 }
+
+.forms {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formMaster {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.infoBox, .addBox, .nameBox, .bioBox, .occBox {
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+}
+
+.addBox, .bioBox, .occBox {
+    max-width: 100%;
+}
+
+input, .dropDown, .message {
+    border-radius: 5px;
+    resize: none;
+    text-align: center;
+}

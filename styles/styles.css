@@ -270,12 +270,19 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .introParagraph p {
   letter-spacing: 1.5px;
+  text-align: center;
+  padding: 5px 20px;
 }
 
-.linkToUserInputPage {
+.linkToUserInputPage, .submitButton {
   background-color: #17202a;
   color: #ffffff;
   margin: 20px;
@@ -311,4 +318,68 @@ form {
   text-align: right;
   margin: 5px auto;
   padding: 0 5px;
+}
+
+.forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formMaster {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.infoBox, .addBox, .nameBox, .bioBox, .occBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 10px auto;
+}
+
+.addBox, .bioBox, .occBox {
+  max-width: 100%;
+}
+
+input, .dropDown, .message {
+  border-radius: 5px;
+  resize: none;
+  text-align: center;
 }
