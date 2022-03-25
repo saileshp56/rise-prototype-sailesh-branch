@@ -1,26 +1,50 @@
 import { Link, Routes, Route, Outlet, useParams } from "react-router-dom";
 import MarketPlaceInputs from "./marketplace/MarketPlaceInputs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faCreditCard,
+  faUser,
+  faUserGroup,
+  faCartShopping
+} from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
   return (
-    <div className="wrapper">
+    <div className="dashboard">
       <div>
-        <nav>
+        <nav className="menu">
           <ul>
             <li>
-              <Link to="home">Home</Link>
+              <Link to="home">
+                <FontAwesomeIcon className="icon" icon={faHouse} />
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="contact">Contact</Link>
+              <Link to="MarketPlace/">
+                <FontAwesomeIcon className="icon" icon={faCartShopping} />
+                Free Market
+              </Link>
             </li>
             <li>
-              <Link to="MarketPlace/">Free Market</Link>
+              <Link to="contact">
+                <FontAwesomeIcon className="icon" icon={faUserGroup} />
+                Contact
+              </Link>
+            </li>
+
+            <li>
+              <Link to="nirvana/">
+                <FontAwesomeIcon className="icon" icon={faCreditCard} />
+                Nirvana
+              </Link>
             </li>
             <li>
-              <Link to="nirvana/">Nirvana</Link>
-            </li>
-            <li>
-              <Link to="me/">Me</Link>
+              <Link to="me/">
+                <FontAwesomeIcon className="icon" icon={faUser} />
+                Me
+              </Link>
             </li>
           </ul>
         </nav>
@@ -34,7 +58,7 @@ const Dashboard = () => {
             element={
               <div>
                 <h1>Free Market</h1>
-                <MarketPlaceInputs/>
+                <MarketPlaceInputs />
               </div>
             }
           />
