@@ -282,12 +282,23 @@ h1 {
   padding: 5px 20px;
 }
 
-.linkToUserInputPage, .submitButton {
+.ButtonBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.linkToUserInputPage, .submitButton, .LinkToDashboard {
   background-color: #17202a;
   color: #ffffff;
   margin: 20px;
   border: none;
   padding: 1em 2em;
+  text-transform: uppercase;
 }
 
 a:link {
@@ -382,4 +393,99 @@ input, .dropDown, .message {
   border-radius: 5px;
   resize: none;
   text-align: center;
+}
+
+.mpmain {
+  text-align: left;
+  margin: 30px auto;
+}
+
+.addNew {
+  text-align: center;
+  margin: 20px auto;
+}
+
+h3 {
+  padding: 30px;
+}
+
+.MPForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.menu ul li {
+  list-style: none;
+  margin: 0;
+}
+
+.menu {
+  width: 200px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  text-align: left;
+}
+
+.menu li {
+  padding: 20px 0;
+}
+.menu li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px 0;
+  color: #17202a;
+  padding: 0 10px;
+}
+
+.menu li:hover {
+  border: 1px solid #17202a;
+}
+
+.icon {
+  padding: 0px 10px;
+  color: #17202a;
 }
