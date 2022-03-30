@@ -1,0 +1,19 @@
+// Sass Variables for our font and colours as per the Figma Style Guide
+
+$baseFont: 'Roboto', sans-serif;
+$black: #17202a;
+$white: #ffffff;
+$offWhtite: #fbfcfd;
+$lightGray: #e5e5e5;
+$darkGray: #ababab;
+
+// Styling for the Nirvana Nav links. These will contain sub menus as per the FIGMA design. These links route to their own React Components. 
+
+.nirvanaNav {
+  list-style: none;
+     ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+}
