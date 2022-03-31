@@ -47,7 +47,6 @@ const Nirvana = () => {
             path="MakePayment/*"
             element={
               <div>
-                <h1>Request Payment</h1>
                 <MakePayment />
               </div>
             }
@@ -56,8 +55,7 @@ const Nirvana = () => {
             path="RequestPayment/*"
             element={
               <div>
-                <h1>Request Payment</h1>
-                <RequestPayment />
+                 <RequestPayment />
               </div>
             }
           />

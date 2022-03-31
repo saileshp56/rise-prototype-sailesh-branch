@@ -21,9 +21,7 @@ const UserInputs = () => {
           console.log(`hello`);
           navigate('/Dashboard',
           
-     )
-
-     }
+     )}
      
 return (
      <div className='wrapper'>
