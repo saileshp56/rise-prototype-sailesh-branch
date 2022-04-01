@@ -26,11 +26,11 @@ const SelfieCamera = React.forwardRef(({ width, height, withAudio, onTryMediaAcc
         let video = ref.current;
         video.srcObject = stream;
         video.play();
-        onTryMediaAccess(true);
+        onTryMediaAccess && onTryMediaAccess(true);
         setStreaming(true);
       })
       .catch((err) => {
-        onTryMediaAccess(false, err);
+        onTryMediaAccess && onTryMediaAccess(false, err);
         setStreaming(false);
       });
   }
