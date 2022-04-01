@@ -6,10 +6,10 @@ import { Routes, Route } from "react-router-dom";
 // This will be our "Make a Payment Page."
 
 const MakePayment = () => {
-  
-     const navigate = useNavigate();
 
-     const handleSubmit = (event) => {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
           event.preventDefault();
           // Event Handler for MakePayment input fields
           console.log(`hello`);
