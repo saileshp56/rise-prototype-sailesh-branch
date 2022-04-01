@@ -489,3 +489,71 @@ h3 {
   padding: 0px 10px;
   color: #17202a;
 }
+
+.nirvanaLanding {
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.nirvanaLanding ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #ffffff;
+  color: #17202a;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ffffff;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.makePaymentButton {
+  background-color: #17202a;
+  color: #ffffff;
+  margin: 20px;
+  border: none;
+  padding: 1em 2em;
+  text-transform: uppercase;
+}
+
+.reqPaymentButton {
+  background-color: #17202a;
+  color: #ffffff;
+  margin: 20px;
+  border: none;
+  padding: 1em 2em;
+  text-transform: uppercase;
+}

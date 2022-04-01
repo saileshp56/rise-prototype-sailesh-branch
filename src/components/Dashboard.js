@@ -1,5 +1,6 @@
 import { Link, Routes, Route, Outlet, useParams } from "react-router-dom";
 import MarketPlaceInputs from "./marketplace/MarketPlaceInputs";
+import Nirvana from "./Nirvana";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -62,8 +63,25 @@ const Dashboard = () => {
               </div>
             }
           />
+          <Route
+            path="MarketPlace/*"
+            element={
+              <div>
+                <h1>Free Market</h1>
+                <MarketPlaceInputs />
+              </div>
+            }
+          />
 
-          <Route path="nirvana/*" element={<h1>Nirvana</h1>} />
+          <Route
+            path="Nirvana/*"
+            element={
+              <div>
+                <h1>Nirvana</h1>
+                <Nirvana />
+              </div>
+            }
+          />
           <Route path="me/*" element={<h1>Me</h1>} />
         </Routes>
       </div>
