@@ -33,12 +33,8 @@ const RequestPayment = () => {
             <label htmlFor="Amount">Amount:</label>
             <input type="text" name="Amount" required />
           </div>
-          <div className="amountBox">
-            <label htmlFor="Amount">Amount:</label>
-            <input type="text" name="Amount" required />
-          </div>
           <div className="paymentNoteBox">
-            <label htmlFor="Note">note:</label>
+            <label htmlFor="Note">Note:</label>
             <input type="text" name="Note" required />
           </div>
         </form>
