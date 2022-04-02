@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useImperativeHandle } from 'react';
 
 /**
  * A <video/> element live streaming from the user's camera. The SelfieCamera's ref
@@ -15,33 +15,94 @@ import React, { useEffect, useState, useRef } from 'react';
  */
 const SelfieCamera = React.forwardRef(({ width, height, withAudio, onTryMediaAccess }, ref) => {
   const [streaming, setStreaming] = useState(false);
+  const [mediaRecorder, setMediaRecorder] = useState(null);
+
+  const videoRef = useRef();
+
+  // an object that may eventually hold an audiovideo recording
+  const [videoData, setVideoData] = useState({
+    blob: null, // this property may be set to a Promise
+    resolve() {} // this method would then be set to be able to resolve that Promise
+  });
+
+  // handles the dataavailable event fired when a recording stops
+  function handleDataAvailable(event) {
+    videoData.resolve(event.data);
+  }
 
   function getVideo() {
+    // request media access
     let constraints = {
       video: { facingMode: 'user' },
       audio: withAudio
     };
     navigator.mediaDevices.getUserMedia(constraints)
       .then((stream) => {
-        let video = ref.current;
+        // play video stream from camera
+        let video = videoRef.current;
         video.srcObject = stream;
         video.play();
+
+        // set up media recording apparatus
+        const newMediaRecorder = new MediaRecorder(stream);
+        newMediaRecorder.ondataavailable = handleDataAvailable;
+        mediaRecorder?.stop(); // stop any previous (accidental) recording
+        setMediaRecorder(newMediaRecorder);
+
+        // custom actions on successful media access
         onTryMediaAccess && onTryMediaAccess(true);
+
         setStreaming(true);
       })
       .catch((err) => {
+        // media unavailable so take down display and recording apparatus
+        videoData.resolve(); // resolve (discard) any unresolved Promise
+        videoData.resolve = () => {};
+        videoData.blob = null;
+        mediaRecorder?.stop();
+        setMediaRecorder(null);
+
+        // custom actions on failed media access
         onTryMediaAccess && onTryMediaAccess(false, err);
+
         setStreaming(false);
       });
   }
 
+  useImperativeHandle(ref, () => ({
+    // the <video/> element
+    get video() {
+      return videoRef.current;
+    },
+
+    // instructs the media recorder to start recording
+    startRecording() {
+      // resolve (discard) any unresolved Promise
+      videoData.resolve();
+      // create a new unresolved Promise to receive the recording later
+      videoData.blob = new Promise((res) => videoData.resolve = res);
+      // start the recording
+      mediaRecorder?.start();
+    },
+
+    // stops and captures the recording
+    async stopRecording() {
+      mediaRecorder?.stop();
+      // mediaRecorder will fire a dataavailable event, which will trigger
+      //   a call to handleDataAvailable and resolve the videoData.blob Promise
+      const blob = await videoData.blob;
+      // save blob using audio/webm MIME type, which seems to keep both audio and video
+      return new Blob([blob], { type: 'audio/webm' });
+    }
+  }));
+
   useEffect(() => {
     getVideo();
-  }, [ref]);
+  }, [videoRef]);
 
   return (
     <div>
-      <video ref={ref} width={width} height={height}/>
+      <video ref={videoRef} width={width} height={height} />
       {
         !streaming &&
         <div width={width} height={height}>
@@ -60,7 +121,7 @@ const SelfieCamera = React.forwardRef(({ width, height, withAudio, onTryMediaAcc
  * @return {Promise<Blob>} a Promise resolving to the image in png format
  */
 async function takeSelfie(cameraRef, canvasRef) {
-  let camera = cameraRef.current;
+  let camera = cameraRef.current.video;
   let canvas = canvasRef?.current || document.createElement('canvas');
 
   // calculate image placement
@@ -93,5 +154,22 @@ async function takeSelfie(cameraRef, canvasRef) {
   return imageBlob;
 }
 
+/**
+ * Instructs a SelfieCamera to begin recording
+ * @param {React reference} cameraRef a reference to the SelfieCamera component
+ */
+async function startRecording(cameraRef) {
+  cameraRef.current.startRecording();
+}
+
+/**
+ * Stops and captures a recording from a SelfieCamera
+ * @param {React reference} cameraRef a reference to the SelfieCamera component
+ * @return {Promise<Blob>} a Promise resolving to the recording in webm format
+ */
+async function stopRecording(cameraRef) {
+  return await cameraRef.current.stopRecording();
+}
+
 export default SelfieCamera;
-export { takeSelfie };
+export { takeSelfie, startRecording, stopRecording };
