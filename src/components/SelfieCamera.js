@@ -102,7 +102,7 @@ const SelfieCamera = React.forwardRef(({ width, height, withAudio, onTryMediaAcc
 
   return (
     <div>
-      <video ref={videoRef} width={width} height={height} />
+      <video muted ref={videoRef} width={width} height={height} />
       {
         !streaming &&
         <div width={width} height={height}>
