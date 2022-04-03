@@ -1,6 +1,7 @@
 import { Link, Routes, Route, Outlet, useParams } from "react-router-dom";
 import MarketPlaceInputs from "./marketplace/MarketPlaceInputs";
-import Nirvana from "./Nirvana";
+import Nirvana from "./wallet/Nirvana";
+import Home from "./home/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -17,7 +18,7 @@ const Dashboard = () => {
         <nav className="menu">
           <ul>
             <li>
-              <Link to="home">
+              <Link to="Home/">
                 <FontAwesomeIcon className="icon" icon={faHouse} />
                 Home
               </Link>
@@ -52,7 +53,16 @@ const Dashboard = () => {
       </div>
       <div>
         <Routes>
-          <Route path="home/*" element={<h1>Home</h1>} />
+          <Route
+            path="Home/*"
+            element={
+              <div>
+                <h1>Home</h1>
+                <Home />
+              </div>
+            }
+          />
+
           <Route path="contact/*" element={<h1>Contact</h1>} />
           <Route
             path="MarketPlace/*"

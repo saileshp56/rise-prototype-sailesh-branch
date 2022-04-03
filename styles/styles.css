@@ -3,12 +3,6 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-.wrapper {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-}
-
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -372,17 +366,18 @@ form {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  margin-top: 40px;
 }
 
 .infoBox, .addBox, .nameBox, .bioBox, .occBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: 10px auto;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
 }
 
 .addBox, .bioBox, .occBox {
@@ -392,6 +387,14 @@ form {
 input, .dropDown, .message {
   border-radius: 5px;
   resize: none;
+  text-align: center;
+}
+
+label {
+  text-align: left;
+}
+
+.bioBox label {
   text-align: center;
 }
 
@@ -556,4 +559,46 @@ h3 {
   border: none;
   padding: 1em 2em;
   text-transform: uppercase;
+}
+
+.mainBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.notification {
+  max-width: 60%;
+}
+
+.verification {
+  max-width: 40%;
+}
+
+.topBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.topBar .iconN {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }

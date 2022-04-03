@@ -26,6 +26,7 @@ form {
 .forms {
     display: flex;
     flex-direction: row;
+
 }
 
 .logo {
@@ -41,12 +42,13 @@ form {
     text-align: right;
     justify-content: flex-end;
     align-items: flex-end;
+    margin-top: 40px;
 }
 
 .infoBox, .addBox, .nameBox, .bioBox, .occBox {
     display: flex;
-    flex-direction: row;
-    margin: 10px auto;
+    flex-direction: column;
+    margin: 10px;
 }
 
 .addBox, .bioBox, .occBox {
@@ -56,5 +58,13 @@ form {
 input, .dropDown, .message {
     border-radius: 5px;
     resize: none;
+    text-align: center;
+}
+
+label {
+    text-align: left;
+}
+
+.bioBox label {
     text-align: center;
 }
