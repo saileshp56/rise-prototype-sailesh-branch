@@ -15,13 +15,12 @@ const UserInputs = () => {
      const navigate = useNavigate();
 
      const handleSubmit = (event) => {
-          event.preventDefault();
-          // this will be where the backend verifies the user's info
-          //  all the input fields should have a ternary/boolean
-          console.log(`hello`);
-          navigate('/Dashboard',
-          
-     )}
+     event.preventDefault();
+     // this will be where the backend verifies the user's info
+     //  all the input fields should have a ternary/boolean
+     console.log(`hello`);
+     navigate("/Dashboard");
+};
      
 return (
      <div className='wrapper'>
