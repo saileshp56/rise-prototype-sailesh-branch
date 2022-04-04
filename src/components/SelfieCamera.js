@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef, useImperativeHandle } from "react";
 
 /**
  * A <video/> element live streaming from the user's camera. The SelfieCamera's ref
- * is forwarded to the <video/> element, enabling for example media track access:
- * ref.current.srcObject?.getTracks()
+ * is customized with a 'video' property referencing the <video/> element,
+ * enabling for example media track access: ref.current.video.srcObject?.getTracks()
  * @prop {Integer} width - the video display width in pixels
  * @prop {Integer} height - the video display height in pixels
  * @prop {Boolean} withAudio - if true, collects both audio and video tracks
