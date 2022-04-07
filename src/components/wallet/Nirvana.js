@@ -2,6 +2,8 @@ import { Link, Routes, Route, Outlet, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import MakePayment from "../marketplace/nirvanaPages/MakePayment";
 import RequestPayment from "../marketplace/nirvanaPages/RequestPayment";
+import CompletedTransactions from "../marketplace/nirvanaPages/CompletedTransactions";
+import CancelledTransactions from "../marketplace/nirvanaPages/CancelledTransactions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard
 } from "@fortawesome/free-solid-svg-icons";
@@ -38,8 +40,14 @@ const Nirvana = () => {
             </ul>
             <li>Transaction</li>
             <ul className="transactionNav">
-              <li>-Complete Transaction</li>
-              <li>-Cancel Transaction</li>
+              <li>
+                {" "}
+                <Link to="CompletedTransactions">Completed Transactions</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="CancelledTransactions">Cancelled Transactions</Link>
+              </li>
             </ul>
             {/* As per Figma, no submenu options for Notification */}
             <li>Notification</li>
@@ -65,6 +73,22 @@ const Nirvana = () => {
             element={
               <div>
                 <RequestPayment />
+              </div>
+            }
+          />
+          <Route
+            path="CompletedTransactions/*"
+            element={
+              <div>
+                <CompletedTransactions />
+              </div>
+            }
+          />
+          <Route
+            path="CancelledTransactions/*"
+            element={
+              <div>
+                <CancelledTransactions />
               </div>
             }
           />
