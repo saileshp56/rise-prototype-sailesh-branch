@@ -40,6 +40,10 @@ function App() {
                     capital gatekeepers.{" "}
                   </p>
                 </div>
+                
+                {/* If the user is a returning user they should be asked to sign in with their wallet pin, then be redirected to the dashboard
+                - The buttons shouldn't span the entire viwport width.
+                */}
                 <div className="ButtonBox">
                   <Link to="/UserInputs" className="linkToUserInputPage">
                     REGISTER YOUR ACCOUNT
