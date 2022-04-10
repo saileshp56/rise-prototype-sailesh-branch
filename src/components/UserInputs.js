@@ -8,7 +8,8 @@ import riseLogo from '../styles/assets/spLogo.png';
 
 // Add Joseph's code for the image capture.
 
-
+// - Make the input page look like the figma, left half input form, right half Joseph's image/camera portion.
+// Bottom/ footer is the button to add user/ should reroute user to dashboard.
 
 const UserInputs = () => {
 
