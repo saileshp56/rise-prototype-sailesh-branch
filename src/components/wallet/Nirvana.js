@@ -57,7 +57,7 @@ const Nirvana = () => {
             </li>
             {/* As per Figma, no submenu options for Fullfilled Payments */}
             <li>
-              <Link to="FulfilledPayments">Fullfilled Payments</Link>
+              <Link to="FulfilledPayments">Fulfilled Payments</Link>
             </li>
           </ul>
         </nav>

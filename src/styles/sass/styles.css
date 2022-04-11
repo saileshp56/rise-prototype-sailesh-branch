@@ -473,6 +473,14 @@ h3 {
   text-align: left;
 }
 
+.listOfNotifications {
+  text-align: left;
+}
+
+.listOfFullfilledPayments {
+  text-align: left;
+}
+
 .mainBox {
   display: flex;
   flex-direction: row;
