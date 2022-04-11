@@ -4,6 +4,8 @@ import MakePayment from "../marketplace/nirvanaPages/MakePayment";
 import RequestPayment from "../marketplace/nirvanaPages/RequestPayment";
 import CompletedTransactions from "../marketplace/nirvanaPages/CompletedTransactions";
 import CancelledTransactions from "../marketplace/nirvanaPages/CancelledTransactions";
+import NirvanaNotifications from "../marketplace/nirvanaPages/NirvanaNotifications";
+import FulfilledPayments from "../marketplace/nirvanaPages/FulfilledPayments";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard
 } from "@fortawesome/free-solid-svg-icons";
@@ -50,9 +52,13 @@ const Nirvana = () => {
               </li>
             </ul>
             {/* As per Figma, no submenu options for Notification */}
-            <li>Notification</li>
+            <li>
+              <Link to="NirvanaNotifications">Notification</Link>
+            </li>
             {/* As per Figma, no submenu options for Fullfilled Payments */}
-            <li>Fullfilled Payments</li>
+            <li>
+              <Link to="FulfilledPayments">Fullfilled Payments</Link>
+            </li>
           </ul>
         </nav>
         <div className="walletBalance">
@@ -89,6 +95,22 @@ const Nirvana = () => {
             element={
               <div>
                 <CancelledTransactions />
+              </div>
+            }
+          />
+          <Route
+            path="NirvanaNotifications/*"
+            element={
+              <div>
+                <NirvanaNotifications />
+              </div>
+            }
+          />
+          <Route
+            path="FulfilledPayments/*"
+            element={
+              <div>
+                <FulfilledPayments />
               </div>
             }
           />
