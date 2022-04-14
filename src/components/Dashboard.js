@@ -30,7 +30,7 @@ const Dashboard = () => {
               </Link>
               <ul>
                 <li>
-
+                  <h3>Something</h3>
                 </li>
                 <li>
                   
@@ -54,7 +54,7 @@ const Dashboard = () => {
 
                 </li>
                 <li>
-                  
+
                 </li>
               </ul>
             </li>
@@ -84,7 +84,7 @@ const Dashboard = () => {
             path="MarketPlace/*"
             element={
               <div>
-                <h1>Free Market</h1>
+                <p>Free Market</p>
                 <MarketPlaceInputs />
               </div>
             }

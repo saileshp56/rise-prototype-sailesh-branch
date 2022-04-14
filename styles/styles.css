@@ -438,6 +438,7 @@ h3 {
 .menu ul li {
   list-style: none;
   margin: 0;
+  position: relative;
 }
 
 .menu {
@@ -491,6 +492,22 @@ h3 {
 .icon {
   padding: 0px 10px;
   color: #17202a;
+}
+
+li:hover ul {
+  display: block;
+  position: absolute;
+}
+
+li:hover li {
+  float: left;
+  font-size: 11px;
+}
+
+ul li ul {
+  position: absolute;
+  left: 180px;
+  top: 0;
 }
 
 .nirvanaLanding {
