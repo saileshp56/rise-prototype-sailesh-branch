@@ -2,6 +2,7 @@ import { Link, Routes, Route, Outlet, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import MakePayment from "../marketplace/nirvanaPages/MakePayment";
 import RequestPayment from "../marketplace/nirvanaPages/RequestPayment";
+import RequestPaymentModal from "../marketplace/nirvanaPages/RequestPaymentModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard
 } from "@fortawesome/free-solid-svg-icons";
@@ -64,7 +65,7 @@ const Nirvana = () => {
             path="RequestPayment/*"
             element={
               <div>
-                <RequestPayment />
+                <RequestPaymentModal />
               </div>
             }
           />
