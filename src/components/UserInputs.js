@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import riseLogo from '../styles/assets/spLogo.png';
 import React, { useEffect, useState, useRef, useImperativeHandle } from "react";
 import SelfieCamera, { takeSelfie, startRecording, stopRecording } from './SelfieCamera';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCamera} from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -110,7 +112,9 @@ return (
 
                     {/* add button with onclick takeselfie function */}
 
-                    <button className="selfieButton" onClick={()=>takeSelfie (cameraRef, canvasRef)}>Take Selfie</button>
+                    <button className="selfieButton" onClick={()=>takeSelfie (cameraRef, canvasRef)}>
+                         <FontAwesomeIcon className="icon camera" icon={faCamera} />
+                         Take Selfie</button>
 
                     <canvas ref={canvasRef} />
 

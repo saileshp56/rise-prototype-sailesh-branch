@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import nirvana from '../../styles/assets/nirvana.png';
 
 const MarketPlaceInputs = () => {
 
@@ -31,11 +32,13 @@ const MarketPlaceInputs = () => {
                <option value="other">Other</option>
                </select>
                <div className="price">
-               <label htmlFor="price">Price:</label>
+               <label htmlFor="price"> 
+               </label>
+               <img src={nirvana}/>
                <input
                     type="text"
                     name="price"
-                    placeholder="Enter Amount"
+                    placeholder= "Enter Amount"
                     required
                />
                </div>
