@@ -28,6 +28,14 @@ const Dashboard = () => {
                 <FontAwesomeIcon className="icon" icon={faCartShopping} />
                 Free Market
               </Link>
+              <ul>
+                <li>
+                  <h3>Something</h3>
+                </li>
+                <li>
+                  
+                </li>
+              </ul>
             </li>
             <li>
               <Link to="contact">
@@ -41,6 +49,14 @@ const Dashboard = () => {
                 <FontAwesomeIcon className="icon" icon={faCreditCard} />
                 Nirvana
               </Link>
+              <ul>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+              </ul>
             </li>
             <li>
               <Link to="me/">
@@ -68,7 +84,7 @@ const Dashboard = () => {
             path="MarketPlace/*"
             element={
               <div>
-                <h1>Free Market</h1>
+                <p>Free Market</p>
                 <MarketPlaceInputs />
               </div>
             }
