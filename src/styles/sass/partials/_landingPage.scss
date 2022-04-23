@@ -13,7 +13,7 @@ h1 {
     align-items: center;
     margin: 0 auto; 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
         p {
             letter-spacing: 1.5px;
             text-align: center;
@@ -40,4 +40,13 @@ h1 {
 
 a:link {
     text-decoration: none;
+}
+
+
+// media Queries
+
+@media (max-width: 500px) {
+    .introParagraph {
+        flex-direction: column;
+    }
 }

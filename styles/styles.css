@@ -265,10 +265,10 @@ h1 {
           align-items: center;
   margin: 0 auto;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .introParagraph p {
   letter-spacing: 1.5px;
@@ -306,6 +306,14 @@ a:link {
   text-decoration: none;
 }
 
+@media (max-width: 500px) {
+  .introParagraph {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .userInputIntro h2 {
   padding: 20px 0px;
 }
@@ -414,7 +422,6 @@ form {
 }
 
 input, .dropDown, .message {
-  border-radius: 5px;
   resize: none;
   text-align: center;
 }
@@ -425,6 +432,39 @@ label {
 
 .bioBox label {
   text-align: center;
+}
+
+.selfieButton {
+  background-color: #17202a;
+  color: #ffffff;
+  border: none;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.josephCamera {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.josephCamera .camera {
+  color: #ffffff;
+}
+
+canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.icon:hover, .icon:focus {
+  color: #ffffff;
 }
 
 .mpmain {

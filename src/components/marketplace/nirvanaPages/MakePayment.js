@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+import nirvana  from "../../../styles/assets/nirvana.png";
 
 // This will be our "Make a Payment Page."
 

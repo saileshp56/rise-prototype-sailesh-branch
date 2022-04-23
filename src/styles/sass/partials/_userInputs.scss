@@ -72,7 +72,6 @@ form {
 
 
 input, .dropDown, .message {
-    border-radius: 5px;
     resize: none;
     text-align: center;
 }
@@ -83,4 +82,30 @@ label {
 
 .bioBox label {
     text-align: center;
+}
+.selfieButton {
+    background-color: $black;
+    color: $white;
+    border: none;
+    padding: .5em 1em;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.josephCamera {
+    display: flex;
+    flex-direction: column;
+}
+
+.josephCamera .camera {
+    color: $white;
+}
+
+canvas {
+    display: flex;
+}
+
+
+.icon:hover, .icon:focus {
+    color: $white;
 }

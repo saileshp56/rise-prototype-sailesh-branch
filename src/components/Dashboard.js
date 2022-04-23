@@ -2,6 +2,7 @@ import { Link, Routes, Route, Outlet, useParams } from "react-router-dom";
 import MarketPlaceInputs from "./marketplace/MarketPlaceInputs";
 import Nirvana from "./wallet/Nirvana";
 import Home from "./home/Home";
+import nirvana from '../styles/assets/nirvana.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -46,7 +47,7 @@ const Dashboard = () => {
 
             <li>
               <Link to="nirvana/">
-                <FontAwesomeIcon className="icon" icon={faCreditCard} />
+                <img src={nirvana}/>
                 Nirvana
               </Link>
               <ul>
