@@ -3,10 +3,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
 import os from 'os';
-import fs from 'mz/fs';
+//import fs from 'mz/fs';
 import path from 'path';
 import yaml from 'yaml';
-import {Keypair, Connection} from '@solana/web3.js';
+import { Keypair, Connection } from '@solana/web3.js';
 
 /**
  * @private
@@ -20,8 +20,8 @@ async function getConfig(): Promise<any> {
     'cli',
     'config.yml',
   );
-  const configYml = await fs.readFile(CONFIG_FILE_PATH, {encoding: 'utf8'});
-  return yaml.parse(configYml);
+  /*const configYml = await fs.readFile(CONFIG_FILE_PATH, {encoding: 'utf8'});
+  return yaml.parse(configYml);*/
 }
 
 /**

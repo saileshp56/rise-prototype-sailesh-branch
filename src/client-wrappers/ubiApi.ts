@@ -12,7 +12,7 @@ import {
 } from '@solana/web3.js';
 
 import os from 'os';
-import fs from 'mz/fs';
+//import fs from 'mz/fs';
 import path from 'path';
 import yaml from 'yaml';
 
@@ -28,7 +28,7 @@ export async function disburseUbiToUser(publicKeyStr: string, numNirvana: number
   const prevLamports = await connection.getBalance(publicKey);
 
   let fees = 0;
-  const {feeCalculator} = await connection.getRecentBlockhash();
+  const { feeCalculator } = await connection.getRecentBlockhash();
 
   // Factor-in rent for 2 years.
   fees += await connection.getMinimumBalanceForRentExemption(0); // Data size = 0
@@ -60,6 +60,6 @@ export async function disburseUbiToUser(publicKeyStr: string, numNirvana: number
 export async function getWalletBalance(publicKeyStr: string, connection: Connection): Promise<number> {
   const publicKey = new PublicKey(publicKeyStr);
   const lamports = await connection.getBalance(publicKey);
-  
-  return lamports/LAMPORTS_PER_SOL;
+
+  return lamports / LAMPORTS_PER_SOL;
 }

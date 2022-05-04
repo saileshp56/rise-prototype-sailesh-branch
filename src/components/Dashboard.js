@@ -4,6 +4,7 @@ import Nirvana from "./wallet/Nirvana";
 import Home from "./home/Home";
 import nirvana from '../styles/assets/nirvana.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Contact from "./contact/Contact";
 import {
   faHouse,
   faCreditCard,
@@ -34,7 +35,7 @@ const Dashboard = () => {
                   <h3>Something</h3>
                 </li>
                 <li>
-                  
+
                 </li>
               </ul>
             </li>
@@ -47,7 +48,7 @@ const Dashboard = () => {
 
             <li>
               <Link to="nirvana/">
-                <img src={nirvana}/>
+                <img src={nirvana} />
                 Nirvana
               </Link>
               <ul>
@@ -80,7 +81,12 @@ const Dashboard = () => {
             }
           />
 
-          <Route path="contact/*" element={<h1>Contact</h1>} />
+          <Route path="contact/*" element={
+            <div>
+              <h1>Contact</h1>
+              <Contact />
+            </div>
+          } />
           <Route
             path="MarketPlace/*"
             element={

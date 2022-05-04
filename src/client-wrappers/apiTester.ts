@@ -11,12 +11,12 @@ import {
   sendAndConfirmTransaction,
 } from '@solana/web3.js';
 
-import {disburseUbiToUser, getWalletBalance} from './ubiApi'; 
-import {createKeypair, recoverKeypair, makePayment} from './walletApi';
-import {getRpcUrl, establishConnection} from './utilApi';
+import { disburseUbiToUser, getWalletBalance } from './ubiApi';
+import { createKeypair, recoverKeypair, makePayment } from './walletApi';
+import { getRpcUrl, establishConnection } from './utilApi';
 
 import os from 'os';
-import fs from 'mz/fs';
+//import fs from 'mz/fs';
 import path from 'path';
 import yaml from 'yaml';
 
@@ -31,13 +31,13 @@ async function main() {
   const result: string[] = [];
 
   await createKeypair().catch((error: Error) => {
-        throw new Error(error.message);
-    })
+    throw new Error(error.message);
+  })
     .then((outputs: string[]) => {
-        result.length = 0;
-        return outputs.forEach((item, i) => {
-          result[i] = item;
-        });
+      result.length = 0;
+      return outputs.forEach((item, i) => {
+        result[i] = item;
+      });
     });
 
   console.log('PUBLIC KEY: ', result[0]); // This is the Public Key.
@@ -45,17 +45,17 @@ async function main() {
 
   console.log("\nRecovering Keypair from seedphrase...");
 
-  let fromKeypair: Keypair; 
+  let fromKeypair: Keypair;
 
   fromKeypair = await recoverKeypair(result[1]).catch((error: Error) => {
-        throw new Error(error.message);
-    })
+    throw new Error(error.message);
+  })
     .then((recKeypair: Keypair) => {
-  	console.log("REGENERATED PUBLIC KEY: ",recKeypair.publicKey.toBase58());
-	return recKeypair;
-	
+      console.log("REGENERATED PUBLIC KEY: ", recKeypair.publicKey.toBase58());
+      return recKeypair;
+
     });
-  
+
   console.log("\nMaking a payment from this keypair to another keypair...");
 
   let toKeypair = Keypair.generate(); //Generate a dummy account to make payment to.

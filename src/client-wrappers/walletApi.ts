@@ -19,10 +19,10 @@ import {
   sendAndConfirmTransaction,
 } from '@solana/web3.js';
 
-import {establishConnection} from './utilApi';
+import { establishConnection } from './utilApi';
 
 import os from 'os';
-import fs from 'mz/fs';
+//import fs from 'mz/fs';
 import path from 'path';
 import yaml from 'yaml';
 
@@ -50,7 +50,7 @@ export async function createKeypair(): Promise<string[]> {
 export async function recoverKeypair(mnemonic: string): Promise<Keypair> {
 
   const seed = await bip39.mnemonicToSeedSync(mnemonic);
-  let a = new Uint8Array(seed.toJSON().data.slice(0,32));
+  let a = new Uint8Array(seed.toJSON().data.slice(0, 32));
 
   const key = Keypair.fromSeed(a);
 
@@ -69,11 +69,11 @@ export async function makePayment(fromKeypair: Keypair, toKeypair: Keypair, numN
     SystemProgram.transfer({
       fromPubkey: fromKeypair.publicKey,
       toPubkey: toKeypair.publicKey,
-      lamports: LAMPORTS_PER_SOL*numNirvana //Assumption: Minimum payment is 1 Nirvana.
+      lamports: LAMPORTS_PER_SOL * numNirvana //Assumption: Minimum payment is 1 Nirvana.
     })
   );
 
-//  let connection = await establishConnection();
+  //  let connection = await establishConnection();
 
   await sendAndConfirmTransaction(
     connection,
