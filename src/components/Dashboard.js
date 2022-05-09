@@ -32,7 +32,7 @@ const Dashboard = () => {
               </Link>
               <ul>
                 <li>
-                  <h3>Something</h3>
+                  {/*<h3>Something</h3>*/}
                 </li>
                 <li>
 
